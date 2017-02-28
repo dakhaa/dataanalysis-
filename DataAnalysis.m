@@ -155,7 +155,7 @@ imgSize = 32; % EIT image is 32x32 pixels
                   
                    figure, plot(imageSumSignal); hold on; 
                    plot(breathInfoEIT(1,:),imageSumSignal(breathInfoEIT(1,:)),'dr'); hold on; % not sure why we have to add +1 
-                   plot(breathInfoEIT(2,:)+1,imageSumSignal(breathInfoEIT(2,:)+1),'dg'); 
+		   plot(breathInfoEIT(2,:),imageSumSignal(breathInfoEIT(2,:)),'dg'); 
                    t = title(['Breath-detection: ',compositFiles(iFiles).name]);  set(t,'interprete','non'), grid on
                    axis tight; 
                             
@@ -324,7 +324,7 @@ imgSize = 32; % EIT image is 32x32 pixels
                        'GI Index','Coefficient of Variation','Center of Ventilation ventral to dorsal (%)'...
                        'Center of Ventilatin right to left (%)','Anterior (AU)','Anterior (%)',...
                        'Posterios (AU)','Posterios (%)','Right (AU)','Right (%)','Left (AU)','Left (%)',...
-                       'Ventilated area (%)','R:L (outcome 3)','EELI','EILI','Event time','Event typ','Patinet position(°)'};
+                       'Ventilated area (%)','R:L (outcome 3)','EELI','EILI','Event time','Event typ','Patinet position(Â°)'};
                    sheetName = 'unfiltered TestVersion Feb2017'; 
                    xlswrite([filePath,'\Results.xlsx'],xlsTitel,sheetName,'A1'); % title 
                    xlswrite([filePath,'\Results.xlsx'],fNames',sheetName,'A2'); % file names
